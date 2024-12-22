@@ -112,9 +112,9 @@ let textone = document.querySelector('.textone').querySelector('h1');
           texttwo.innerHTML = '';
       },28000)
       setTimeout(function(){
-        textone.innerHTML = '从前从前,有个人爱你很久';
-        texttwo.innerHTML = '但偏偏，风渐渐';
-        textthree.innerHTML = '把距离吹的好远';
+        textone.innerHTML = '愿你三冬暖';
+        texttwo.innerHTML = '愿你春不寒';
+        textthree.innerHTML = '愿你平安快乐，幸福健康';
       },112500)
 
 
