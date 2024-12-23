@@ -6,12 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>今晚，整片星空将为你一人闪烁</title>
     <style>
-      
-
+      /* 让页面背景变得更深，突出鼠标效果 */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #111;
+        }
+        /* 容器样式 */
+        .js-cursor-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none; /* 防止容器本身拦截鼠标事件 */
+            z-index: 9999;
+        }
     </style>
     <link rel="stylesheet" href="css/skystar.css">
   </head>
   <body>
+    <span class="js-cursor-container"></span>
+    <!-- 引入外部 JavaScript 文件 -->
+    <script src="js/cursorEffect.js"></script>
     <video id="videofilm" poster="img/skystar2.jpg" autoplay muted loop>
       <source src="video/skystar.mp4" type="video/mp4">
     </video>
