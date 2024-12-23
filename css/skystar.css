@@ -27,12 +27,14 @@ body {
     left: 50%;
     top: 50%;
     transform: translateX(-50%);
+    color: #E8F9FD;
 }
 .textone {
     position: absolute;
     left: 50%;
     top: 40%;
     transform: translateX(-50%);
+    color: #E8F9FD;
 }
 .textthree {
     position: absolute;
