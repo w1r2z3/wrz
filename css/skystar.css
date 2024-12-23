@@ -19,7 +19,7 @@ body {
   }
   h1{
     font-size: 36px;
-    color: black;
+    color: #E8F9FD;
     font-family: '楷体';
   }
 .texttwo {
@@ -27,14 +27,12 @@ body {
     left: 50%;
     top: 50%;
     transform: translateX(-50%);
-    color: black;
 }
 .textone {
     position: absolute;
     left: 50%;
     top: 40%;
     transform: translateX(-50%);
-    color: black;
 }
 .textthree {
     position: absolute;
