@@ -1,7 +1,8 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
+
 body {
     height: 100vh;
     display: flex;
@@ -11,65 +12,79 @@ body {
     overflow: hidden;
     perspective: 1300px;
 }
+
 #videofilm {
     width: 100%;
     height: auto;
     position: fixed;
     z-index: -1;
-  }
-  h1{
+}
+
+h1 {
     font-size: 36px;
     color: #E8F9FD;
     font-family: '楷体';
-  }
+}
+
 .texttwo {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translateX(-50%);
-    color: #E8F9FD;
+    color: black;
 }
+
 .textone {
     position: absolute;
     left: 50%;
     top: 40%;
     transform: translateX(-50%);
-    color: #E8F9FD;
+    color: black;
 }
+
 .textthree {
     position: absolute;
     left: 50%;
     top: 60%;
     transform: translateX(-50%);
 }
+
 :root {
     --margin-top: 0;
     --margin-left: 0;
     --animation-duration: 0s;
     --animation-delay: 0s;
 }
+
 div {
     transform-style: preserve-3d;
 }
+
 .word-box,
-.word-box .word{
-position: absolute;
-animation: rotY 0s linear infinite;
-animation-duration: var(--animation-duration);
-animation-delay: var(--animation-delay);
+.word-box .word {
+    position: absolute;
+    animation: rotY 0s linear infinite;
+    animation-duration: var(--animation-duration);
+    animation-delay: var(--animation-delay);
+    animation-play-state: running;
+    /* 默认运行状态 */
 }
-.word-box{
+
+.word-box {
     margin-top: var(--margin-top);
 }
-.word-box .word{
+
+.word-box .word {
     margin-left: var(--margin-left);
 }
-.word-box .word {
-    animation-duration: reverse;
+
+/* 鼠标悬停时动画暂停 */
+.word-box:hover {
+    animation-play-state: paused;
 }
+
 @keyframes rotY {
-    to{
+    to {
         transform: rotateY(360deg);
     }
-    
 }
