@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>致orange——</title>
+    <style>
+        /* 容器样式 */
+        .js-cursor-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none; /* 防止容器本身拦截鼠标事件 */
+            z-index: 9999;
+        }
+    </style>
+    <link rel="stylesheet" href="../css/skystar.css">
+  </head>
+  <body>
+    <span class="js-cursor-container"></span>
+    <!-- 引入外部 JavaScript 文件 -->
+    <script src="../js/cursorEffect.js"></script>
+    <video id="videofilm" poster=" img/skystar2.jpg" autoplay muted loop loading="lazy">
+      <source src="../video/lxy_s.mp4" type="video/mp4">
+    </video>
+    <div class="textone">
+      <h1>小彤祝你天天开心！</h1>
+    </div>
+    <div class="texttwo">
+      <h1>Wishing you endless happiness!</h1>
+    </div>
+    <div class="textthree">
+      <h1></h1>
+    </div>
+    <audio src="../video/晴天.mp3" autoplay loop></audio>
+    
+    <div class="container"></div>
+    <script src="../js/skystar.js"></script>
 
+  </body>
+</html>
