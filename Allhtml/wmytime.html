@@ -1,145 +1,42 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>就让时光慢慢走！</title>
-  <style>
-    :root {
-      --color2: #f67280;
-      --color4: #c06c84;
-      --color6: #6c5b7b;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      font-size: 14px;
-    }
-
-    body {
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Montserrat', sans-serif, Arial, 'Microsoft Yahei';
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-image: url('../img/wmyimg.jpg');
-      /* 修改为相对路径 */
-    }
-
-    .clock-container {
-      position: relative;
-      width: 380px;
-      height: 80px;
-      border-radius: 10px;
-      background-image: linear-gradient(135deg, var(--color2), var(--color4), var(--color6));
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      animation: animate 4s linear infinite;
-    }
-
-    .clock-container::after,
-    .clock-container::before {
-      position: absolute;
-      content: "";
-      background-image: inherit;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      border-radius: 10px;
-      filter: blur(15px);
-    }
-
-    .clock-container::before {
-      filter: blur(100px);
-    }
-
-    .clock-display {
-      position: absolute;
-      left: 10px;
-      right: 10px;
-      top: 10px;
-      bottom: 10px;
-      background-color: #2b2a2a;
-      border-radius: 8px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .clock-display p {
-      font-size: 50px;
-      font-weight: bold;
-      color: transparent;
-      letter-spacing: 2px;
-      background-image: linear-gradient(135deg, var(--color2), var(--color4), var(--color6));
-      background-clip: text;
-      -webkit-background-clip: text;
-    }
-
-    @keyframes animate {
-      100% {
-        filter: hue-rotate(360deg);
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <div class="clock-container">
-    <div class="clock-display">
-      <p id="time"></p>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>致王孟月——</title>
+    <style>
+        /* 容器样式 */
+        .js-cursor-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none; /* 防止容器本身拦截鼠标事件 */
+            z-index: 9999;
+        }
+    </style>
+    <link rel="stylesheet" href="../css/skystar.css">
+  </head>
+  <body>
+    <span class="js-cursor-container"></span>
+    <!-- 引入外部 JavaScript 文件 -->
+    <script src="../js/cursorEffect.js"></script>
+    <video id="videofilm" poster=" img/skystar2.jpg" autoplay muted loop loading="lazy">
+      <source src="../video/lxy_s.mp4" type="video/mp4">
+    </video>
+    <div class="textone">
+      <h1>小月祝你天天开心！</h1>
     </div>
-  </div>
+    <div class="texttwo">
+      <h1>Wishing you endless happiness!</h1>
+    </div>
+    <div class="textthree">
+      <h1></h1>
+    </div>
+    <audio src="../video/livemylife.mp3" autoplay loop></audio>
+    
+    <div class="container"></div>
+    <script src="../js/skystar.js"></script>
 
-  <script>
-    const timeEl = document.querySelector("#time");
-
-    function updateTime(timeEl) {
-      const date = new Date();
-      let h = date.getHours();  // 获取24小时制
-      let m = date.getMinutes();
-      let s = date.getSeconds();
-
-      h = h < 10 ? "0" + h : h; // 小于10的小时数前补零
-      m = m < 10 ? "0" + m : m; // 小于10的分钟数前补零
-      s = s < 10 ? "0" + s : s; // 小于10的秒数前补零
-
-      timeEl.textContent = `${h}:${m}:${s}`;  // 显示24小时制
-
-      // 根据小时数选择背景图片
-      setBackground(h);
-    }
-
-    // 设置目标时间为 2025 年 1 月 1 日 0 点
-    const targetDate = new Date("2024-12-31T23:16:00");
-
-    // 判断当前时间是否已经到达目标时间，如果到达则跳转
-    function checkAndRedirect() {
-      const now = new Date();
-      const timeDiff = targetDate - now;
-
-      if (timeDiff <= 0) {
-        // 到达目标时间，跳转到另一个 HTML 文件
-        window.location.href = "wmyskystar.html"; // 你要跳转到的 HTML 文件路径
-      }
-    }
-
-    // 每秒更新一次时间并检查是否需要跳转
-    setInterval(() => {
-      updateTime(timeEl);
-      checkAndRedirect();
-    }, 1000);
-  </script>
-</body>
-
+  </body>
 </html>
